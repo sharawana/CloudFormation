@@ -12,7 +12,7 @@ Resources:
   MyS3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: Varshicfjenkins   # Static, globally unique name
+      BucketName: varshicfjenkins   # Static, globally unique name
       VersioningConfiguration:
         Status: Enabled
       Tags:
