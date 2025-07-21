@@ -2,9 +2,9 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: CloudFormation Template - S3 Bucket and EC2 Instance in Singapore (ap-southeast-1)
 
 Parameters:
-  KeyName:
-    Description: Name of an existing EC2 KeyPair for SSH access
-    Type: AWS::EC2::KeyPair::KeyName
+  InstanceName:
+    Type: String
+    Description: Name for the EC2 instance
 
 Resources:
 
@@ -29,16 +29,12 @@ Resources:
           FromPort: 22
           ToPort: 22
           CidrIp: 0.0.0.0/0
-      Tags:
-        - Key: Name
-          Value: EC2-SG
 
   # EC2 Instance
   MyEC2Instance:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t2.micro
-      KeyName: !Ref KeyName
       ImageId: ami-03c7d01cf1b3b8cbf  # Amazon Linux 2 AMI for ap-southeast-1
       SecurityGroups:
         - !Ref EC2SecurityGroup
