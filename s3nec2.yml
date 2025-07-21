@@ -35,7 +35,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t2.micro
-      ImageId: ami-03c7d01cf1b3b8cbf  # Amazon Linux 2 AMI for ap-southeast-1
+      ImageId: ami-0e7f9c9fced6cfb10
       SecurityGroups:
         - !Ref EC2SecurityGroup
       Tags:
